@@ -98,7 +98,7 @@ float: left;
 					</thead>
 					<?php  
 						include('connect.php');
-						$sql = "SELECT * FROM tbl_application_info ORDER BY application_no";
+						$sql = "SELECT * FROM tbl_application_info ORDER BY date_registered DESC";
 						$result = $conn->query($sql);
 						if ($result->num_rows > 0){
 							while($row = $result->fetch_assoc()) {
