@@ -1,6 +1,6 @@
 # HROnline
 
-This is the Online Recruitment System currently being used by the Anderson Group BPO, Inc.
+This is the Online Recruitment System or also known as Anderson.Recruits currently used by the Anderson Group BPO, Inc.
 
 ## Getting Started
 
@@ -13,12 +13,13 @@ You need XAMPP, FileZilla, Visual Studio Code (or any text editor but use VSC if
 ### Installing
 
 ```
-1. You need to install the Visual Studio Code or any text editor.
-2. You will also be needing to install XAMPP for Apache, PHP and FileZilla.
-3. Clone and download this repository. Copy and paste it to your web server or if you are using XAMPP, it's in the /htdocs directory of wherever you installed XAMPP.
-4. Get the database from your PM or the supervisor handling the HR Online Recruits.
-5. Download and import the SQL file to the /phpmyadmin.
-6. Test and run the website.
+1. You need to install Visual Studio Code or any text editor.
+2. You will also be needing to install XAMPP for Apache and PHP, Filezilla for FTP, and GitKraken for easy version control but not necessary if you know how to use GitHub.
+3. Clone and download this repository. Copy and paste it to your web server or if you are using XAMPP, it's in the /htdocs directory of wherever you installed XAMPP. Just search for the xampp directory and inside that directory you should see an /htdocs directory.
+4. Get the database(.sql file) from your PM or the supervisor handling the Anderson.Recruits.
+5. Get the index(.php file) from your PM or the supervisor handling the Anderson.Recruits.
+6. Import the .sql file to localhost/phpmyadmin and configure the connection string of your codes to match the credentials of your MySQL database.
+7. Test and run the website.
 ```
 
 If the website successfully run, you should see the dialog box where you will choose a type of applicant you are applying for.
@@ -38,7 +39,7 @@ In adding features or when working something in the system, you must use branchi
 *The release branch is the branch for development, this should be the copy of every developer and this is the branch that you must work on first before pushing and merging into the main branch.
 *The feature branch holds all the small features the system has. If you are working on adding a new feature in the system, you should create and check out a branch with 'feature/nameOfNewFeature' so everyone can work on the feature without worrying about the release or current working system.
 
-### Importan Reminders
+### Important Reminders
 ```
 * ALWAYS test everything in the development stage before uploading changes into the live server. 
 * In development stage, if you are testing or working in submission of application forms, put in mind that it will notify and submit an email on the email address of the HR, so remove the mailer function first or if you are working on the mailer, use data that will distinguish that it is for debugging/development purposes only (eg. firstname->'Test').
@@ -48,33 +49,31 @@ In adding features or when working something in the system, you must use branchi
 
 ### Important Files From the File Tree
 ```
-/HROnline
-|-config - This folder contains some of the PHP files for queries in the HR Online Recruits.
-|-css - This folder contains the CSS files of the HR Online Recruits.
-|-fonts - This folder contains the fonts of the HR Online Recruits.
-|-custom_css - This folder contains the custom CSS files of the HR Online Recruits.
-|-custom_js - This folder contains the custom javascript files of the HR Online Recruits.
-|-img - This folder contains the image files of the HR Online Recruits.
-|-js - This folder contains the javascript files of the HR Online Recruits.
-|-quickapply - This folder for the quick-apply feature of the system.
-    |-css - This folder contains the CSS files for the quick apply.
-    |-img - This folder contains the image files for the quick apply.
-    |-api - This folder contains the API of the quick-apply feature of the system.
-        |-addQuickApplicant.php - This file is responsible for inserting a quick applicant data in the database and sending a mail to notify the HR.
-        |-deleteQuickApplicant.php - This file is for deleting a quick applicant in the database.
-        |-getAllPositions.php - This file is for retrieving/fetching all the positions to populate the "<select>" element in the quick-apply.
-    |-constants - This folder contains all the constants values for the quick-apply feature.
-        |-Constants.php - This file contains the constant values for the connection string of the quick-apply feature.
-        |-DbConnect.php - This file is the connection string of the system to the MySQL database and Apache server for the quick-apply feature of the system.
-        |-Operations.php - This file is a class that holds all the methods to be used by the quick apply feature of the system.
-    |-index.php - This file is the ~/application/quickapply/ or index file of the Quick Apply feature of the HR Online Recruits. If you want to add/remove/update any features in the system's ~/application/quickapply/ page, this is the file you need to edit.
+/HROnlline
+|-api - This directory contains the api directory for the Anderson.Recruits.
+    |-js - This directory contains the js file for the reports.
+    |-reports - This directory contains all the api for the generation of reports.
+|-config - This directory contains some of the PHP files for queries in the Anderson.Recruits.
+|-constants - This contains the connection string/operations/functions for the api directory for Anderson.Recruits.
+|-css - This directory contains the CSS files of the Anderson.Recruits.
+|-fonts - This directory contains the fonts of the Anderson.Recruits.
+|-custom_css - This directory contains the custom CSS files of the Anderson.Recruits.
+|-custom_js - This directory contains the custom javascript files of the Anderson.Recruits.
+|-img - This directory contains the image files of the Anderson.Recruits.
+|-js - This directory contains the javascript files of the Anderson.Recruits.
+|-quickapply - This directory for the quick-apply feature of the system.
+    |-css - This directory contains the CSS files for the quick apply.
+    |-img - This directory contains the image files for the quick apply.
+    |-api - This directory contains the API of the quick-apply feature of the system.
+    |-constants - This directory contains all the constants values for the quick-apply feature.
+    |-index.php - This file is the ~/application/quickapply/ or index file of the Quick Apply feature of the Anderson.Recruits. If you want to add/remove/update any features in the system's ~/application/quickapply/ page, this is the file you need to edit.
 |-account.php - This file is for updating the currently logged in account.
 |-applicants.php - This file is for the Applicants List.
 |-cms.php - This file is for the Content Management System, adding positions and application source lists.
 |-connect.php - This is the connection string of the system to the MySQL database and Apache server.
-|-createAccount.php - This file is for creating an account for the HR Online Recruits.
+|-createAccount.php - This file is for creating an account for the Anderson.Recruits.
 |-google.php - This file is the main page/home/dashboard of the HR after logging in.
-|-index.php - This file is the ~/application/ or index file of the HR Online Recruits. If you want to add/remove/update any features in the system's ~/application/ page, this is the file you need to edit.
+|-index.php - This file is the ~/application/ or index file of the Anderson.Recruits. If you want to add/remove/update any features in the system's ~/application/ page, this is the file you need to edit.
 |-formvalidator.js - This file is the validator/checker of the field and values given by the applicant when filling up the application from the index.php.
 |-printableResume.php - This file shows a printable resume in pdf when clicking the eye button in google.php for the HR.
 |-query.php - This file runs the queries for the google.php.
